@@ -1,0 +1,105 @@
+<h1>Règles générales</h1>
+<p>Les codes d'erreurs se basent sur ceux de l'API</p>
+<h1>Ecrire un message de log</h1>
+<p><strong>Method</strong>: <code>POST</code></p>
+<p><strong>Auth required</strong>: NO</p>
+<p><strong>Data constraints</strong></p>
+<pre><code>{
+    "name":"writeLog",
+    "param":{
+        "message" : "message de log",//Obligatoire
+        "level" : "error"//Obligatoire
+    }
+}
+</code></pre>
+<h2>Success Response</h2>
+<p><strong>Code</strong>: <code>200 OK</code></p>
+<p><strong>Content example</strong></p>
+<pre><code>    {"status":200,"result":{"result":"Log add."}}
+	
+</code></pre>
+<h1>Générer une call trace</h1>
+<p><strong>Method</strong>: <code>POST</code></p>
+<p><strong>Auth required</strong>: NO</p>
+<p><strong>Data constraints</strong></p>
+<pre><code>{
+    "name":"generateCallTrace",
+    "param":{
+        "level" : "info",//Obligatoire
+        "giveAllHistory" : "true"//Obligatoire
+    }
+}
+</code></pre>
+<h2>Success Response</h2>
+<p><strong>Code</strong>: <code>200 OK</code></p>
+<p><strong>Content example</strong></p>
+<pre><code>    {"status":200,"result":{"result":"Call trace generate and add."}}
+</code></pre>
+<h1>Utilitaire de log pouvant être appelé directement depuis le php en statique</h1>
+<h1>Ecrire un message de log</h1>
+<p><strong>Data constraints</strong></p>
+<pre><code>{
+    "name":"writeLog",
+    "param":{
+        "message" : "message de log",//Obligatoire
+        "level" : "error"//Non obligatoire
+    }
+}
+</code></pre>
+<h2>Success Response</h2>
+<p><strong>Content example</strong></p>
+<pre><code>    {"result":"true"}
+</code></pre>
+<h1>Ecrire un message de log de type info</h1>
+<p><strong>Data constraints</strong></p>
+<pre><code>{
+    "name":"writeLogInfo",
+    "param":{
+        "message" : "message de log",//Obligatoire
+    }
+}
+</code></pre>
+<h2>Success Response</h2>
+<p><strong>Content example</strong></p>
+<pre><code>    {"result":"true"}
+</code></pre>
+<h1>Ecrire un message de log de type error</h1>
+<p><strong>Data constraints</strong></p>
+<pre><code>{
+    "name":"writeLogError",
+    "param":{
+        "message" : "message de log",//Obligatoire
+    }
+}
+</code></pre>
+<h2>Success Response</h2>
+<p><strong>Content example</strong></p>
+<pre><code>    {"result":"true"}
+</code></pre>
+<h1>Ecrire un message de log de type debug</h1>
+<p><strong>Data constraints</strong></p>
+<pre><code>{
+    "name":"writeLogDebug",
+    "param":{
+        "message" : "message de log",//Obligatoire
+    }
+}
+</code></pre>
+<h2>Success Response</h2>
+<p><strong>Content example</strong></p>
+<pre><code>    {"result":"true"}
+</code></pre>
+<h1>Générer une call trace</h1>
+<p><strong>Data constraints</strong></p>
+<pre><code>{
+    "name":"generateCallTrace",
+    "param":{
+        "level" : "info",//Non obligatoire
+        "giveAllHistory" : "true"//Non obligatoire
+    }
+}
+</code></pre>
+<h2>Success Response</h2>
+<p><strong>Content example</strong></p>
+<pre><code>    {"result":"true"}
+</code></pre>
