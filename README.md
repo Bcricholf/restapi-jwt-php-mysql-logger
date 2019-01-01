@@ -9,5 +9,6 @@ On été créé/modifié pour ce poc les fichier suivants :
 
 Le fichier taskSaveLog.sh correspond à la tache journalière qui fera l'archivage des logs du jour, il faudra l'appeler dans un cron job tu type suivant :
 0 0 1 * * path/to/taskSaveLog.sh
+Tous les chemins devront être fait en fonction de l'endroit utilisé.
 
 Le fichier api_doc.html contient la documentation lié au poc
