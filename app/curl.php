@@ -1,4 +1,27 @@
 <?php 
+
+	$curl = curl_init();
+	$request = '{
+					"name":"writeLog",
+					"param":{
+						"message":"Test de l api de log",
+						"level":"info"
+					}
+				}';
+	curl_setopt($curl, CURLOPT_URL, 'http://tutorials/jwt-api/');
+	curl_setopt($curl, CURLOPT_POST, true);
+	curl_setopt($curl, CURLOPT_HTTPHEADER, ['content-type: application/json']);
+	curl_setopt($curl, CURLOPT_POSTFIELDS, $request);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+
+	$response = curl_exec($curl);
+	$err = curl_error($curl);
+	if($err) {
+		echo 'Curl Error: ' . $err;
+	} else {
+		echo $response;
+	}
+
 	$curl = curl_init();
 	$request = '{
 					"name":"generateToken",
